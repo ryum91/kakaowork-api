@@ -13,7 +13,7 @@ import {
   SelectBlock
 } from './types';
 
-export const createTextBlock = ({ text, inlines }: Exclude<TextBlock, 'type'>): TextBlock => {
+export const textBlock = ({ text, inlines }: Exclude<TextBlock, 'type'>): TextBlock => {
   return {
     type: 'text',
     text,
@@ -21,14 +21,14 @@ export const createTextBlock = ({ text, inlines }: Exclude<TextBlock, 'type'>): 
   };
 };
 
-export const createImageLinkBlock = (url: string): ImageLinkBlock => {
+export const imageLinkBlock = (url: string): ImageLinkBlock => {
   return {
     type: 'image_link',
     url
   };
 };
 
-export const createButtonBlock = ({
+export const buttonBlock = ({
   text,
   style,
   action_type,
@@ -45,13 +45,13 @@ export const createButtonBlock = ({
   };
 };
 
-export const createDividerBlock = (): DividerBlock => {
+export const dividerBlock = (): DividerBlock => {
   return {
     type: 'divider'
   };
 };
 
-export const createHeaderBlock = ({ text, style }: Exclude<HeaderBlock, 'type'>): HeaderBlock => {
+export const headerBlock = ({ text, style }: Exclude<HeaderBlock, 'type'>): HeaderBlock => {
   return {
     type: 'header',
     text,
@@ -59,18 +59,14 @@ export const createHeaderBlock = ({ text, style }: Exclude<HeaderBlock, 'type'>)
   };
 };
 
-export const createActionBlock = (elements: ButtonBlock[]): ActionBlock => {
+export const actionBlock = (elements: ButtonBlock[]): ActionBlock => {
   return {
     type: 'action',
     elements
   };
 };
 
-export const createDescriptionBlock = ({
-  term,
-  content,
-  accent
-}: Exclude<DescriptionBlock, 'type'>): DescriptionBlock => {
+export const descriptionBlock = ({ term, content, accent }: Exclude<DescriptionBlock, 'type'>): DescriptionBlock => {
   return {
     type: 'description',
     accent,
@@ -79,7 +75,7 @@ export const createDescriptionBlock = ({
   };
 };
 
-export const createSectionBlock = ({ content, accessory }: Exclude<SectionBlock, 'type'>): SectionBlock => {
+export const sectionBlock = ({ content, accessory }: Exclude<SectionBlock, 'type'>): SectionBlock => {
   return {
     type: 'section',
     accessory,
@@ -87,7 +83,7 @@ export const createSectionBlock = ({ content, accessory }: Exclude<SectionBlock,
   };
 };
 
-export const createContextBlock = ({ content, image }: Exclude<ContextBlock, 'type'>): ContextBlock => {
+export const contextBlock = ({ content, image }: Exclude<ContextBlock, 'type'>): ContextBlock => {
   return {
     type: 'context',
     content,
@@ -95,7 +91,7 @@ export const createContextBlock = ({ content, image }: Exclude<ContextBlock, 'ty
   };
 };
 
-export const createLabelBlock = ({ text, markdown }: Exclude<LabelBlock, 'type'>): LabelBlock => {
+export const labelBlock = ({ text, markdown }: Exclude<LabelBlock, 'type'>): LabelBlock => {
   return {
     type: 'label',
     markdown,
@@ -103,7 +99,7 @@ export const createLabelBlock = ({ text, markdown }: Exclude<LabelBlock, 'type'>
   };
 };
 
-export const createInputBlock = ({ name, placeholder, required }: Exclude<InputBlock, 'type'>): InputBlock => {
+export const inputBlock = ({ name, placeholder, required }: Exclude<InputBlock, 'type'>): InputBlock => {
   return {
     type: 'input',
     name,
@@ -112,12 +108,7 @@ export const createInputBlock = ({ name, placeholder, required }: Exclude<InputB
   };
 };
 
-export const createSelectBlock = ({
-  name,
-  options,
-  placeholder,
-  required
-}: Exclude<SelectBlock, 'type'>): SelectBlock => {
+export const selectBlock = ({ name, options, placeholder, required }: Exclude<SelectBlock, 'type'>): SelectBlock => {
   return {
     type: 'select',
     name,
