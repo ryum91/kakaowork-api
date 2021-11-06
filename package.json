@@ -1,0 +1,19 @@
+{
+  "name": "kakaowork-api",
+  "version": "0.0.1",
+  "description": "kakaowork bot api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryum91",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "prettier": "^2.4.1"
+  }
+}
