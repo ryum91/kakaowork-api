@@ -1,4 +1,6 @@
+import { BaseResponse } from './../types';
 import { request } from './axios';
+import { UserResponse, UsersResponse } from '../types';
 
 const URL = {
   info: '/v1/users.info',
@@ -9,11 +11,8 @@ const URL = {
   setVacationTime: '/v1/users.set_vacation_time'
 };
 
-export interface UserResponse extends BaseResponse {
-  user: User;
-}
-
 /**
+ * 워크스페이스에 속한 특정 멤버의 상세 정보를 얻습니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#usersinfo
  *
  * @param userId
@@ -30,6 +29,10 @@ export const requestUsersInfo = (userId: number) => {
 };
 
 /**
+ * 이메일 주소를 이용하여 특정 워크스페이스에 가입한 멤버의 정보를 조회합니다.
+ * 해당 API 호출 시, 다른 워크스페이스에 속한 멤버는 조회할 수 없습니다.
+ * 이메일의 경우, 해당 멤버가 워크스페이스 가입 시 멤버 인증에 사용한 이메일 주소를 사용해야 합니다.
+ * 프로필 정보에 부가정보로 등록된 이메일을 사용할 경우 멤버 조회가 되지 않습니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#usersfind_by_email
  *
  * @param email
@@ -46,6 +49,10 @@ export const requestUsersFindByEmail = (email: string) => {
 };
 
 /**
+ * 전화번호를 이용하여 특정 워크스페이스에 가입한 멤버의 정보를 조회합니다.
+ * 해당 API 호출 시, 다른 워크스페이스에 속한 멤버는 찾을 수 없습니다.
+ * 전화번호의 경우, 해당 멤버가 워크스페이스 가입 시에 멤버 인증으로 사용된 전화번호 정보를 사용해야 합니다.
+ * 프로필에 부가 정보로 등록된 전화번호 사용 시, API 호출이 제대로 동작하지 않을 수 있습니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#usersfind_by_phone_number
  *
  * @param phoneNumber
@@ -61,11 +68,8 @@ export const requestUsersFindByPhoneNumber = (phoneNumber: string) => {
   });
 };
 
-export interface UsersResponse extends BaseResponse {
-  users: User[];
-}
-
 /**
+ * 특정 워크스페이스에 속한 전체 멤버의 목록과 각각의 멤버에 대한 상세 정보를 조회합니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#userslists
  *
  * @param params
@@ -83,6 +87,7 @@ export const requestUsersList = (params?: { limit?: number; cursor?: string }) =
 };
 
 /**
+ * 특정 멤버의 근무시간을 갱신합니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#usersset_work_time
  *
  * @param params
@@ -101,6 +106,7 @@ export const requestUsersSetWorkTime = (params: { userId: number; startTime: num
 };
 
 /**
+ * 특정 멤버의 휴가 시간을 갱신합니다.
  * https://docs.kakaoi.ai/kakao_work/webapireference/users/#usersset_vacation_time
  *
  * @param params
