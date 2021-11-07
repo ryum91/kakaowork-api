@@ -64,6 +64,17 @@ requestMessagesSend(conversationId, {
 
 > TypeScript를 지원하며, 필요한 타입들은 전부 정의되어 있습니다.
 
+### Reactive
+
+[카카오워크 Reactive](https://docs.kakaoi.ai/kakao_work/webapireference/reactive/) 는 직접 호출하는 방식이 아닌,
+카카오워크 내부 서버에서 호출하면 응답하는 방식으로 되어있습니다. 따라서 request API는 제공되지 않습니다.
+
+하지만 Block Generator 함수는 제공되어, Modal Block을 반환할 때는 사용할 수 있습니다.
+
+```js
+import { labelBlock, inputBlock, selectBlock } from 'kakaowork-api/blocks';
+```
+
 ## 주의사항
 
 카카오워크에서 공식적으로 제공하는 라이브러리가 아니며, 추후 카카오워크 API가 변경되면 정상적으로 동작하지 않을 수도 있습니다.
