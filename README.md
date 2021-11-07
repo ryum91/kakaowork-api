@@ -14,7 +14,7 @@ npm install kakaowork-api
 
 ### 환경변수 설정
 
-`KAKAOWORK_BOT_API_KEY` 이름으로 환경 변수를 등록하세요.
+`KAKAOWORK_BOT_API_KEY` 이름으로 카카오워크 관리자 페이지에서 발급받은 API KEY를 환경 변수에 등록하세요.
 
 ```
 Window) set KAKAOWORK_BOT_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
