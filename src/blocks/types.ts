@@ -1,3 +1,7 @@
+/**
+ * MessageBlock 체크 용도의 Type입니다.
+ * 해당 Type을 Extends 받은 Block은 Message 구성에만 사용할 수 있습니다.
+ */
 export interface MessageBlock {
   type: string;
 }
@@ -96,6 +100,10 @@ export interface ContextBlock extends MessageBlock {
   image: ImageLinkBlock;
 }
 
+/**
+ * ModalBlock 체크 용도의 Type입니다.
+ * 해당 Type을 Extends 받은 Block은 Modal 구성에만 사용할 수 있습니다.
+ */
 export interface ModalBlock {
   type: string;
 }
