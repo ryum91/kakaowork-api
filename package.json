@@ -1,12 +1,12 @@
 {
   "name": "kakaowork-api",
-  "version": "0.0.3-alpha.1",
+  "version": "0.0.3",
   "description": "kakaowork bot api",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && tsc",
-    "release:alpha": "standard-version --prerelease alpha"
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
