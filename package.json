@@ -1,6 +1,6 @@
 {
   "name": "kakaowork-api",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "description": "kakaowork bot api",
   "main": "index.js",
   "scripts": {
