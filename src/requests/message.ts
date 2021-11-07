@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { Message, MessageResponse } from '../types';
+import { Message, MessageResponse } from './types';
 
 const URL = {
   send: '/v1/messages.send',

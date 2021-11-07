@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { BaseResponse, ConversationResponse, ConversationsResponse, UsersResponse } from '../types';
+import { BaseResponse, ConversationResponse, ConversationsResponse, UsersResponse } from './types';
 
 const URL = {
   open: '/v1/conversations.open',

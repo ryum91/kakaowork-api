@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { BotResponse } from './../types';
+import { BotResponse } from './types';
 
 const URL = {
   info: '/v1/bots.info'

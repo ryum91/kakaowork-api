@@ -1,4 +1,5 @@
-import { MessageBlock } from './blocks/types';
+import { MessageBlock } from '../blocks/types';
+
 export interface BaseResponse {
   success: boolean;
   error?: ErrorData;

@@ -1,6 +1,6 @@
-import { BaseResponse } from './../types';
+import { BaseResponse } from './types';
 import { request } from './axios';
-import { UserResponse, UsersResponse } from '../types';
+import { UserResponse, UsersResponse } from './types';
 
 const URL = {
   info: '/v1/users.info',

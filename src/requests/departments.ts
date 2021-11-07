@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { DepartmentsResponse } from '../types';
+import { DepartmentsResponse } from './types';
 
 const URL = {
   list: '/v1/departments.list'

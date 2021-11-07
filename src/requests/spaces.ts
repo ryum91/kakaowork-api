@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { SpaceResponse } from '../types';
+import { SpaceResponse } from './types';
 
 const URL = {
   info: '/v1/spaces.info'
