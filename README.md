@@ -45,7 +45,7 @@ import { textBlock, buttonBlock, ... } from 'kakaowork-api/blocks';
 실제 Message를 보낼 때는 다음과 같이 사용할 수 있습니다.
 
 ```js
-import { fetchMessagesSend } from 'kakaowork-api/fetches/messages';
+import { fetchMessageSend } from 'kakaowork-api/fetches/messages';
 import { textBlock, buttonBlock } from 'kakaowork-api/blocks';
 
 fetchMessageSend(conversationId, {
