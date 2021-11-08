@@ -1,4 +1,4 @@
-import { request } from './axios';
+import { request } from './request';
 import { SpaceResponse } from './types';
 
 const URL = {
@@ -11,7 +11,7 @@ const URL = {
  *
  * @returns
  */
-export const requestSpacesInfo = () => {
+export const fetchSpaceInfo = () => {
   return request<SpaceResponse>({
     method: 'GET',
     url: URL.info

@@ -1,4 +1,4 @@
-import { request } from './axios';
+import { request } from './request';
 import { DepartmentsResponse } from './types';
 
 const URL = {
@@ -12,7 +12,7 @@ const URL = {
  * @param params
  * @returns
  */
-export const requestDepartmentsList = (params?: { limit?: number; cursor?: string }) => {
+export const fetchDepartmentList = (params?: { limit?: number; cursor?: string }) => {
   return request<DepartmentsResponse>({
     method: 'GET',
     url: URL.list,

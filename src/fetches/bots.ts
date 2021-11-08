@@ -1,4 +1,4 @@
-import { request } from './axios';
+import { request } from './request';
 import { BotResponse } from './types';
 
 const URL = {
@@ -11,7 +11,7 @@ const URL = {
  *
  * @returns
  */
-export const requestBotsInfo = () => {
+export const fetchBotInfo = () => {
   return request<BotResponse>({
     method: 'GET',
     url: URL.info

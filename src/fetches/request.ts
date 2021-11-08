@@ -4,7 +4,7 @@ const { KAKAOWORK_BOT_API_KEY } = process.env;
 
 const BASE_URL = 'https://api.kakaowork.com';
 
-export const request = <T>(options?: Exclude<AxiosRequestConfig, 'baseURL' | 'headers'>) => {
+export const request = <T>(options?: Omit<AxiosRequestConfig, 'baseURL' | 'headers'>) => {
   return axios
     .request<T>({
       baseURL: BASE_URL,

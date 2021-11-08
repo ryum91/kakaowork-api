@@ -1,4 +1,4 @@
-import { request } from './axios';
+import { request } from './request';
 import { Message, MessageResponse } from './types';
 
 const URL = {
@@ -14,7 +14,7 @@ const URL = {
  * @param param1
  * @returns
  */
-export const requestMessagesSend = (conversationId: number, { text, blocks }: Message) => {
+export const fetchMessageSend = (conversationId: number, { text, blocks }: Message) => {
   return request<MessageResponse>({
     method: 'POST',
     url: URL.send,
@@ -35,7 +35,7 @@ export const requestMessagesSend = (conversationId: number, { text, blocks }: Me
  * @param param1
  * @returns
  */
-export const requestMessagesSendByEmail = (email: string, { text, blocks }: Message) => {
+export const fetchMessageSendByEmail = (email: string, { text, blocks }: Message) => {
   return request<MessageResponse>({
     method: 'POST',
     url: URL.sendByEmail,

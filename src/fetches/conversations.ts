@@ -1,4 +1,4 @@
-import { request } from './axios';
+import { request } from './request';
 import { BaseResponse, ConversationResponse, ConversationsResponse, UsersResponse } from './types';
 
 const URL = {
@@ -16,7 +16,7 @@ const URL = {
  * @param userId
  * @returns
  */
-export const requestConversationsOpenDM = (userId: number) => {
+export const fetchConversationOpenDM = (userId: number) => {
   return request<ConversationResponse>({
     method: 'POST',
     url: URL.open,
@@ -33,7 +33,7 @@ export const requestConversationsOpenDM = (userId: number) => {
  * @param userIds
  * @returns
  */
-export const requestConversationsOpenGroup = (userIds: number[]) => {
+export const fetchConversationOpenGroup = (userIds: number[]) => {
   return request<ConversationResponse>({
     method: 'POST',
     url: URL.open,
@@ -50,7 +50,7 @@ export const requestConversationsOpenGroup = (userIds: number[]) => {
  * @param params
  * @returns
  */
-export const requestConversationsList = (params?: { limit?: number; cursor?: string }) => {
+export const fetchConversationList = (params?: { limit?: number; cursor?: string }) => {
   return request<ConversationsResponse>({
     method: 'GET',
     url: URL.list,
@@ -68,7 +68,7 @@ export const requestConversationsList = (params?: { limit?: number; cursor?: str
  * @param conversationId
  * @returns
  */
-export const requestConversationsUsers = (conversationId: number) => {
+export const fetchConversationUsers = (conversationId: number) => {
   return request<UsersResponse>({
     method: 'GET',
     url: URL.users(conversationId)
@@ -84,7 +84,7 @@ export const requestConversationsUsers = (conversationId: number) => {
  * @param userIds
  * @returns
  */
-export const requestConversationsInvite = (conversationId: number, userIds: number[]) => {
+export const fetchConversationInvite = (conversationId: number, userIds: number[]) => {
   return request<BaseResponse>({
     method: 'POST',
     url: URL.invite(conversationId),
@@ -103,7 +103,7 @@ export const requestConversationsInvite = (conversationId: number, userIds: numb
  * @param userIds
  * @returns
  */
-export const requestConversationsKick = (conversationId: number, userIds: number[]) => {
+export const fetchConversationKick = (conversationId: number, userIds: number[]) => {
   return request<BaseResponse>({
     method: 'POST',
     url: URL.kick(conversationId),

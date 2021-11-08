@@ -1,6 +1,5 @@
-import { BaseResponse } from './types';
-import { request } from './axios';
-import { UserResponse, UsersResponse } from './types';
+import { request } from './request';
+import { UserResponse, UsersResponse, BaseResponse } from './types';
 
 const URL = {
   info: '/v1/users.info',
@@ -18,7 +17,7 @@ const URL = {
  * @param userId
  * @returns
  */
-export const requestUsersInfo = (userId: number) => {
+export const fetchUserInfo = (userId: number) => {
   return request<UserResponse>({
     method: 'GET',
     url: URL.info,
@@ -38,7 +37,7 @@ export const requestUsersInfo = (userId: number) => {
  * @param email
  * @returns
  */
-export const requestUsersFindByEmail = (email: string) => {
+export const fetchUserFindByEmail = (email: string) => {
   return request<UserResponse>({
     method: 'GET',
     url: URL.findByEmail,
@@ -58,7 +57,7 @@ export const requestUsersFindByEmail = (email: string) => {
  * @param phoneNumber
  * @returns
  */
-export const requestUsersFindByPhoneNumber = (phoneNumber: string) => {
+export const fetchUserFindByPhoneNumber = (phoneNumber: string) => {
   return request<UserResponse>({
     method: 'GET',
     url: URL.findByEmail,
@@ -75,7 +74,7 @@ export const requestUsersFindByPhoneNumber = (phoneNumber: string) => {
  * @param params
  * @returns
  */
-export const requestUsersList = (params?: { limit?: number; cursor?: string }) => {
+export const fetchUserList = (params?: { limit?: number; cursor?: string }) => {
   return request<UsersResponse>({
     method: 'GET',
     url: URL.list,
@@ -93,7 +92,7 @@ export const requestUsersList = (params?: { limit?: number; cursor?: string }) =
  * @param params
  * @returns
  */
-export const requestUsersSetWorkTime = (params: { userId: number; startTime: number; endTime: number }) => {
+export const fetchUserSetWorkTime = (params: { userId: number; startTime: number; endTime: number }) => {
   return request<BaseResponse>({
     method: 'POST',
     url: URL.setWorkTime,
@@ -112,7 +111,7 @@ export const requestUsersSetWorkTime = (params: { userId: number; startTime: num
  * @param params
  * @returns
  */
-export const requestUsersSetVacationTime = (params: { userId: number; startTime: number; endTime: number }) => {
+export const fetchUserSetVacationTime = (params: { userId: number; startTime: number; endTime: number }) => {
   return request<BaseResponse>({
     method: 'POST',
     url: URL.setVacationTime,

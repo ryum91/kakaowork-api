@@ -23,15 +23,15 @@ Linux) export KAKAOWORK_BOT_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ### API 사용
 
-`kakaowork-api/requests` 하위에 서브 디렉토리 구조로 API 를 Import 하여 사용하실 수 있습니다.
+`kakaowork-api/fetches` 하위에 서브 디렉토리 구조로 API 를 Import 하여 사용하실 수 있습니다.
 
 ```js
-import { ... } from 'kakaowork-api/requests/users';
-import { ... } from 'kakaowork-api/requests/conversations';
-import { ... } from 'kakaowork-api/requests/messages';
-import { ... } from 'kakaowork-api/requests/departments';
-import { ... } from 'kakaowork-api/requests/spaces';
-import { ... } from 'kakaowork-api/requests/bots';
+import { ... } from 'kakaowork-api/fetches/users';
+import { ... } from 'kakaowork-api/fetches/conversations';
+import { ... } from 'kakaowork-api/fetches/messages';
+import { ... } from 'kakaowork-api/fetches/departments';
+import { ... } from 'kakaowork-api/fetches/spaces';
+import { ... } from 'kakaowork-api/fetches/bots';
 ```
 
 ### MessageBlock Generator 사용
@@ -45,10 +45,10 @@ import { textBlock, buttonBlock, ... } from 'kakaowork-api/blocks';
 실제 Message를 보낼 때는 다음과 같이 사용할 수 있습니다.
 
 ```js
-import { requestMessagesSend } from 'kakaowork-api/requests/messages';
+import { fetchMessagesSend } from 'kakaowork-api/fetches/messages';
 import { textBlock, buttonBlock } from 'kakaowork-api/blocks';
 
-requestMessagesSend(conversationId, {
+fetchMessageSend(conversationId, {
   text: '전송할 텍스트',
   blocks: [
     textBlock('텍스트블록'),
