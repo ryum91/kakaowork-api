@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/ryum91/kakaowork-api/compare/v1.1.8...v1.1.9) (2021-11-08)
+
+
+### Bug Fixes
+
+* requests -> fetches 로 네이밍 변경 ([d6f02e0](https://github.com/ryum91/kakaowork-api/commit/d6f02e0dd14ba4467c64f531b6260c57b5262dfc))
+
 ### [1.1.8](https://github.com/ryum91/kakaowork-api/compare/v1.1.7...v1.1.8) (2021-11-07)
 
 
